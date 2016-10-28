@@ -417,6 +417,16 @@ module.exports = function (grunt) {
       unit: {
         configFile: 'test/karma.conf.js',
         singleRun: true
+      },
+      // Jenkins settings
+      continuous: {
+        configFile: 'karma.conf.js',
+        singleRun: true,
+        browsers: ['PhantomJS'],
+        reporters: ['dots', 'junit'],
+        junitReporter: {
+          outputFile: 'test-results.xml'
+        }
       }
     }
   });
@@ -476,6 +486,14 @@ module.exports = function (grunt) {
     'newer:jshint',
     'newer:jscs',
     'test',
+    'build'
+  ]);
+
+  grunt.registerTask('citest', [
+    'clean:server',
+    'newer:jshint',
+    'newer:jscs',
+    'karma:continuous',
     'build'
   ]);
 };
