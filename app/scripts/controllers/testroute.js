@@ -7,7 +7,7 @@
  * # TestrouteCtrl
  * Controller of the portfolioApp
  */
-angular.module('portfolioApp')
+angular.module('partageTaPassionApp')
   .controller('TestrouteCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',

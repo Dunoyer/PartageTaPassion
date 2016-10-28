@@ -7,7 +7,7 @@
  * # MainCtrl
  * Controller of the portfolioApp
  */
-angular.module('portfolioApp')
+angular.module('partageTaPassionApp')
   .controller('MainCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
