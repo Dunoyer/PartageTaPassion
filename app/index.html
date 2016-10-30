@@ -20,17 +20,13 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-
-
-
-
     <!-- Add your site or application content here -->
     <div class="header">
       <div class="navbar navbar-default" role="navigation">
         <div class="container">
           <div class="navbar-header">
 
-            <a class="navbar-brand" href="#/">portfolio</a>
+            <a class="navbar-brand" href="#/">PartageTaPassion</a>
           </div>
 
           <div class="collapse">
@@ -46,7 +42,15 @@
     </div>
 
     <div class="container">
-    <div ng-include="'views/main.html'" ng-controller="MainCtrl"></div>
+      <div ng-controller="testRouteCtrl">
+        <button ng-click="affichage()">Afficher la liste</button>
+        <h1>Liste des adhérents</h1>
+        <div ng-repeat="perso in listePerso">
+          <h3>Identifiant : {{perso.id}}</h3>
+          <p>Nom : {{perso.nom}}</p>
+          <p>Prénom : {{perso.prenom}}</p>
+        </div>
+      </div>
     </div>
 
     <div class="footer">

@@ -2,10 +2,10 @@
 
 /**
  * @ngdoc function
- * @name portfolioApp.controller:MainCtrl
+ * @name partageTaPassionAppp.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the portfolioApp
+ * Controller of the partageTaPassionAppp
  */
 angular.module('partageTaPassionApp')
   .controller('MainCtrl', function () {
@@ -15,3 +15,14 @@ angular.module('partageTaPassionApp')
       'Karma'
     ];
   });
+
+angular.module('partageTaPassionApp')
+  .controller('testRouteCtrl', function ($scope, $http) {
+    $scope.affichage=function(){
+      $http.get('/api/affiche')
+        .success(function(data){
+          $scope.listePerso=data;
+        })
+    }
+  });
+
