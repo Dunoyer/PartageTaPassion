@@ -8,21 +8,19 @@
  * Controller of the partageTaPassionAppp
  */
 angular.module('partageTaPassionApp')
-  .controller('MainCtrl', function () {
+  .controller('MainCtrl', function ($scope, $http) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
-  });
 
-angular.module('partageTaPassionApp')
-  .controller('testRouteCtrl', function ($scope, $http) {
-    $scope.affichage=function(){
+    //
+    $scope.affichage = function () {
       $http.get('/api/affiche')
         .success(function(data){
           $scope.listePerso=data;
         })
-    }
-  });
+    };
 
+  });

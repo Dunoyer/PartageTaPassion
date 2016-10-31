@@ -1,36 +1,40 @@
-var ficheInfo=[
-  {
-    id:1,
-    nom:"Depuis",
-    prenom:"Jean"
-  },
-  {
-    id:2,
-    nom:"Durand",
-    prenom:"Christian"
-  },
-  {
-    id:3,
-    nom:"Martin",
-    prenom:"Michel"
-  }
-]
 var express = require('express');
 var app = express();
-app.use('/lib', express.static(__dirname + '/node_modules/express'));
-app.use('/lib', express.static(__dirname + '/bower_components/angular'));
-app.use('/JavaScript', express.static(__dirname + '/app/scripts/controllers'));
+
+app.use(express.static(__dirname+"/app"));
+app.use(express.static(__dirname+"/bower_components"));
+
 app.get('/', function (req, res) {
-  res.sendfile(__dirname + '/../app/views/index.html');
+  res.sendfile(__dirname + '/app/index.html');
 });
 
 app.get('/api/affiche', function(req, res) {
+  console.log('I received a GET request');
+
+  var ficheInfo=[
+    {
+      id:1,
+      nom:"Depuis",
+      prenom:"Jean"
+    },
+    {
+      id:2,
+      nom:"Durand",
+      prenom:"Christian"
+    },
+    {
+      id:3,
+      nom:"Martin",
+      prenom:"Michel"
+    }
+  ]
+
   res.json(ficheInfo);
 });
 
-var port = 8081;
+var port = 3000;
 app.listen(port, function(){
-  console.log('Server is listenning on http://localhost::'+ port+'/');
+  console.log('Server is listenning on http://localhost:'+ port+'/');
 });
 
 
