@@ -9,14 +9,12 @@ AngularJS 1 et Node.js sont à l'honneur sur ce projet.
 ## Base de donnée 
 Utilisation de <strong> MySQL </strong>
 
-## Automatisation des taches
+## Serveur d'intégration continue pour l'automatisation des tâches (tests unitaires + déploiement)
 
-Utilisation de `grunt` pour lancer les tâches.
+Utilisation du serveur d'intégration continue <strong> Jenkins </strong> connecté au répository.
+Lancement du build avec la commande windows `grunt default` pour lancer les tâches.
+- <strong> jshint: </strong> Détection des erreurs et des potentiels problèmes
 
 ## Testing
 
 Utilisateur de la commande `grunt test` pour lancer les tests unitaires avec Karma et Jasmine.
-
-> Test citation sfesqgsdgdsgsdgsdgsdgsdgsdfg
-
-<blockquote>une citation est un paragraphe ouvert par un chevron fermant</blockquote>
