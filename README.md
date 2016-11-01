@@ -1,6 +1,6 @@
 # PartageTaPassion
 
-Le projet "Partage ta Passion" est une plateforme qui permet à un individu ou un groupe d'individus de partager leurs passions afin de monter un projet en commun.
+Le projet "Partage ta Passion" est une plateforme qui permet à un individu ou un groupe d'individus de partager leurs passions afin de trouver des profils simil aires pour monter un projet en commun.
 
 ## Frameworks de développement 
 
