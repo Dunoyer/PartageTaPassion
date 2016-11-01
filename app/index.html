@@ -18,17 +18,27 @@
       <p class="browsehappy">Vous utilisez un navigateur <strong>obsolète</strong>. </p>
     <![endif]-->
 
-    <div class="header">
-      <div  style="margin: 0" class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#/">PartageTaPassion</a>
+    <!-- En-tête -->
+    <div ng-controller="headerController">
+      <div class="header">
+        <div  style="margin: 0" class="navbar navbar-default" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#/">PartageTaPassion</a>
+            </div>
           </div>
-
         </div>
       </div>
     </div>
 
+    <!-- Menu
+    <nav>
+
+    </nav>
+    -->
+
+
+    <!-- Contenu principale -->
     <div class="accueil">
       <div class="row">
         <div class="col-sm-6 col-sm-offset-3 form-box">
@@ -74,26 +84,28 @@
       </div>
     </div>
 
+    <!-- Pied de page -->
     <div class="footer">
       <p> @ Partage Ta Passion 2016 - Ftgotc </p>
     </div>
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID
+       <script>
+         !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+         (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+         r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+         }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
+         ga('create', 'UA-XXXXX-X');
+         ga('send', 'pageview');
+      </script>
+    -->
 
     <!-- JQuery -->
       <script src="jquery/dist/jquery.js"></script>
     <!-- end JQuery -->
 
-    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <!-- Scripts-->
         <script src="angular/angular.min.js"></script>
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>

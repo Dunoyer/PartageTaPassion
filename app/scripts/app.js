@@ -2,13 +2,27 @@
 
 /**
  * @ngdoc overview
- * @name portfolioApp
+ * @name partageTaPassionApp
  * @description
- * # portfolioApp
+ * # partageTaPassionApp
  *
- * Main module of the application.
+ * Configuration du module principale de l'application
  */
-angular
-  .module('partageTaPassionApp', []);
+angular.module('partageTaPassionApp', [])
 
+.config(['$routeProvider', function ($routeProvider) {
 
+  $routeProvider
+    .when('/', {
+      controller: 'HomeController',
+      templateUrl: 'modules/home/views/home.html'
+    })
+
+    .when('/login', {
+      controller: 'LoginController',
+      templateUrl: 'modules/authentication/views/login.html',
+      hideMenus: true
+    })
+
+    .otherwise({ redirectTo: '/login' });
+}])
