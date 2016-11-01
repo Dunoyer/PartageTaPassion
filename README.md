@@ -9,11 +9,14 @@ AngularJS 1 et Node.js sont à l'honneur sur ce projet.
 ## Base de donnée 
 Utilisation de <strong> MySQL </strong>
 
-## Serveur d'intégration continue pour l'automatisation des tâches (tests unitaires + déploiement)
+## Serveur d'intégration continue pour l'automatisation des tâches (tests + déploiement)
 
 Utilisation du serveur d'intégration continue <strong> Jenkins </strong> connecté au répository.
 Lancement du build avec la commande windows `grunt default` pour lancer les tâches.
-- <strong> jshint: </strong> Détection des erreurs et des potentiels problèmes
+- <strong> jshint: </strong> Détection des erreurs et des problèmes potentiels
+- <strong> jscs: </strong> Vérificateur de style de code
+- <strong> test: </strong> Lancement des tests unitaires
+- <strong> build: </strong> Lancement du build
 
 ## Testing
 
