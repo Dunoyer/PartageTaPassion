@@ -1,10 +1,13 @@
 # PartageTaPassion
 
-Le projet "Partage ta Passion" est une plateforme qui permet à une individu ou un groupe d'individus de partager leurs passions afin de monter un projet en commun.
+Le projet "Partage ta Passion" est une plateforme qui permet à un individu ou un groupe d'individus de partager leurs passions afin de monter un projet en commun.
 
-## Framework de développement 
+## Frameworks de développement 
 
 AngularJS 1 et Node.js sont à l'honneur sur ce projet.
+
+## Base de donnée 
+Utilisation de <strong> MySQL </strong>
 
 ## Automatisation des taches
 
