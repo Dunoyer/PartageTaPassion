@@ -25,3 +25,6 @@ Commande `nodemon server.js`
 ## Testing
 
 Utilisateur de la commande `grunt test` pour lancer les tests unitaires avec Karma et Jasmine.
+
+## Téléchargement des dépendances
+Utilisation de la commande `npm install` pour télécharger les dépendances sur sa machine.
