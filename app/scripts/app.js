@@ -8,21 +8,15 @@
  *
  * Configuration du module principale de l'application
  */
-angular.module('partageTaPassionApp', [])
+angular.module('partageTaPassionApp', ['ngRoute'])
 
 .config(['$routeProvider', function ($routeProvider) {
 
   $routeProvider
     .when('/', {
-      controller: 'HomeController',
-      templateUrl: 'modules/home/views/home.html'
+      controller: 'loginController',
+      templateUrl: 'views/login.html'
     })
 
-    .when('/login', {
-      controller: 'LoginController',
-      templateUrl: 'modules/authentication/views/login.html',
-      hideMenus: true
-    })
-
-    .otherwise({ redirectTo: '/login' });
-}])
+    .otherwise({ redirectTo: '/' });
+}]);
