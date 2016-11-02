@@ -26,6 +26,9 @@
             <div class="navbar-header">
               <a class="navbar-brand" href="#/">PartageTaPassion</a>
             </div>
+            <div ng-show="true">
+              <button type="button" class="btn pull-righ btn-danger" ng-click="logdown()">Déconnexion</button>
+            </div>
           </div>
         </div>
       </div>
@@ -53,11 +56,10 @@
         <script src="angular/angular.min.js"></script>
         <script src="angular-route/angular-route.js"></script>
         <script src="scripts/app.js"></script>
-        <script src="services/authentificationService.js"></script>
+        <script src="scripts/services/authentificationService.js"></script>
         <script src="scripts/controllers/header.js"></script>
         <script src="scripts/controllers/login.js"></script>
         <script src="scripts/controllers/main.js"></script>
-
     <!-- endbuild -->
 </body>
 </html>

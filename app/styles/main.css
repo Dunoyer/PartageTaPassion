@@ -80,17 +80,17 @@ button.btn:active:focus, button.btn.active:focus { outline: 0; opacity: 0.6; bac
     overflow-x: hidden;
   }
   .container {
-    max-width: 530px;
+    max-width: 730px;
   }
 
   /* Remove the padding we set earlier */
   .header,
-  .accueil,
   .marketing,
   .footer {
     padding-left: 0;
     padding-right: 0;
   }
+
   /* Space out the masthead */
   .header {
     margin-bottom: 30px;
@@ -99,5 +99,9 @@ button.btn:active:focus, button.btn.active:focus { outline: 0; opacity: 0.6; bac
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
+  }
+
+  .rouge{
+    color:red;
   }
 }

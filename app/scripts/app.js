@@ -17,6 +17,10 @@ angular.module('partageTaPassionApp', ['ngRoute'])
       controller: 'loginController',
       templateUrl: 'views/login.html'
     })
+    .when('/accueil/membre', {
+      controller: 'mainController',
+      templateUrl: 'views/accueil.html'
+    })
 
     .otherwise({ redirectTo: '/' });
 }]);

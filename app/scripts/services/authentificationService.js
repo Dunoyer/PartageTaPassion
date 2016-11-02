@@ -2,7 +2,7 @@
  * Service gérant l'authentification
  */
 angular.module('partageTaPassionApp')
-  .factory("authentificationService", function($http){
+  .factory("authentificationService", function($http, $rootScope){
     var utilisateur = null;
     var estConnecte = false;
 
@@ -14,13 +14,23 @@ angular.module('partageTaPassionApp')
         return estConnecte;
       },
       connection : function(email, password){
-        $http.post('/api/authentification', { email: mail, password: password })
-          .then(function (response){
-            alert('Récuparation des données OK ');
+
+        // API REST
+        $http.post('/api/authentification', { email: email, password: password })
+          .success(function (response){
+            utilisateur = response;
+            estConnecte = true;
           })
-          .then(function(error){
+          .error(function(error){
             alert('pas de données !');
           });
+
+        $rootScope.$broadcast("connectionStatusChanged", {getUtilisateur: utilisateur, getEstConnecte: estConnecte, afficheDeconnection : true});
+      },
+      deconnexion : function () {
+        utilisateur = null;
+        estConnecte = false;
+        $rootScope.$broadcast("connectionStatusChanged", {afficheDeconnection: false});
       }
     };
   });
