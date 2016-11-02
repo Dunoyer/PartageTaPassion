@@ -12,7 +12,7 @@ angular.module('partageTaPassionApp')
       getAllContenuAPI : function(){
 
         // API REST - Obtenu tous les contenus
-        $http.get('/api/contenu', { })
+        $http.get('/api/contenu')
           .success(function (response){
             contenu = response;
           })

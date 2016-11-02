@@ -84,6 +84,8 @@ app.post('/api/contenu', function(req, res){
   connection.query(queryString,function(err, result) {
     if (err) throw err;
 
+    console.log(result);
+
     res.json(result); // Résultat de la requête
   })
 });
