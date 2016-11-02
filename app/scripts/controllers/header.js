@@ -9,9 +9,9 @@ angular.module('partageTaPassionApp')
       $location.path("/");
     };
 
-    // Affichage du boutton de déconnexion
+    /* Affichage du boutton de déconnexion
     $rootScope.on('connectionStatusChanged', function (evn, args) {
 
       $scope.deconnectionBoutton = args.afficheDeconnection;
-    });
+    });*/
   });

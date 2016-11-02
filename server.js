@@ -73,8 +73,17 @@ app.post('/api/authentification', function(req, res){
   connection.query(queryString, [mail, pwd],function(err, result) {
     if (err) throw err;
 
-    console.log(result[0]);
-    res.json(result[0]);
+    res.json(result[0]); // Résultat de la requête
   })
 });
 
+app.post('/api/contenu', function(req, res){
+
+  var queryString = 'SELECT * FROM contenu';
+
+  connection.query(queryString,function(err, result) {
+    if (err) throw err;
+
+    res.json(result); // Résultat de la requête
+  })
+});

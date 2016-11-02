@@ -15,9 +15,14 @@ angular.module('partageTaPassionApp')
       'Karma'
     ];
   })
-  .controller('mainController', function ($scope, authentificationService, $location) {
+  .controller('mainController', function ($scope, authentificationService, $location, contenuService) {
 
+    // Information sur l'utilisateur
     $scope.prenom = authentificationService.getUtilisateur().prenom;
+
+    $scope.contenuPrincipal = function () {
+      return contenuService.getAllContenuAPI();
+    };
 
     // Déconnexion
     $scope.logdown = function () {

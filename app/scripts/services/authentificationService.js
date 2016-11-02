@@ -15,7 +15,7 @@ angular.module('partageTaPassionApp')
       },
       connection : function(email, password){
 
-        // API REST
+        // API REST - Authentification
         $http.post('/api/authentification', { email: email, password: password })
           .success(function (response){
             utilisateur = response;
@@ -30,7 +30,7 @@ angular.module('partageTaPassionApp')
       deconnexion : function () {
         utilisateur = null;
         estConnecte = false;
-        $rootScope.$broadcast("connectionStatusChanged", {afficheDeconnection: false});
+        $rootScope.$broadcast("connectionStatusChanged", {getUtilisateur: utilisateur, getEstConnecte: estConnecte, afficheDeconnection: false});
       }
     };
   });

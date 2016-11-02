@@ -2,7 +2,22 @@
   <h1> Bienvenu {{prenom}} sur notre plateforme </h1>
   <p> Partage une passion dès maintenant. Let's go ! </p>
 
-  <button type="button" ng-click="listeUtilisateurs">Afficher les utilisateurs</button>
 
 
+  <div class="row">
+    <div class="col-sm-4">
+        <ul ng-repeat="contenu in contenuPrincipal">
+          <li>{{conteu.tite}}</li>
+          <li>{{contenu.contenu}}</li>
+        </ul>
+    </div>
+
+    <div class="col-sm-8">
+      <form novalidate class="simple-form">
+        titre: <input type="text" ng-model="titre" /><br />
+        Contenu: <input type="text" ng-model="contenu" /><br />
+        <button type="submit" class="btn">Envoyer</button>
+      </form>
+    </div>
+  </div>
 </section>
