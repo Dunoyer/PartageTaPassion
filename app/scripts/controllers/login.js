@@ -7,31 +7,32 @@ angular.module('partageTaPassionApp')
     $scope.password="";
     $scope.erreur=null;
 
-    var utilisateur = null;
-
     // Connexion
     $scope.signup = function(){
+
+      // Si le formulaire est valide
       if($scope.signupForm.$valid){
 
         authentificationService.connection($scope.email, $scope.password); // Appel du service d'authentification
-
-        $scope.$on("connectionStatusChanged", function(even, data){
-
-          if(data.getEstConnecte){
-
-              $location.path("/accueil/membre");
-
-          }else{
-              $scope.erreur="Email ou mot de passe invalide !";
-              $location.path("/");
-          }
-        });
 
       }else{
         $scope.erreur="Email ou mot de passe invalide !";
         $location.path("/");
       }
     };
+
+    // Changement du statut de connexion
+    $scope.$on("connectionStatusChanged", function(even, data){
+
+      if(data.getEstConnecte){
+        alert('login.js ' + data.getEstConnecte);
+        $location.path("/accueil/membre");
+
+      }else{
+        $scope.erreur="Email ou mot de passe invalide !";
+        $location.path("/");
+      }
+    });
 
 
   });

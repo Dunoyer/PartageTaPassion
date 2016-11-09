@@ -33,7 +33,7 @@ app.use(express.static(__dirname+"/bower_components"));
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-app.use(bodyParser.json()); //Parse le texte en JSON et expose le résultat de l'objet a req.body
+app.use(bodyParser.json()); //Parse le texte en JSON et expose le résultat de l'objet à req.body
 
 /*
  * Connection serveur
@@ -71,9 +71,13 @@ app.post('/api/authentification', function(req, res){
   var queryString = 'SELECT * FROM utilisateurs WHERE email = ? and password = ?';
 
   connection.query(queryString, [mail, pwd],function(err, result) {
-    if (err) throw err;
+    if (err) res.send(err);
 
-    res.json(result[0]); // Résultat de la requête
+    if(result.length !== 0){
+      res.json(result[0]); // Envoi des informations de l'utilisateur
+    }else{
+      return res.send(500, "Something broke! Error: " + err );
+    }
   })
 });
 
@@ -82,9 +86,10 @@ app.post('/api/contenu', function(req, res){
   var queryString = 'SELECT * FROM contenu';
 
   connection.query(queryString,function(err, result) {
-    if (err) throw err;
-
-    console.log(result);
+    if (err)
+    {
+      throw err;
+    }
 
     res.json(result); // Résultat de la requête
   })

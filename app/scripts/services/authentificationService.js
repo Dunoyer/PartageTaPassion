@@ -17,20 +17,24 @@ angular.module('partageTaPassionApp')
 
         // API REST - Authentification
         $http.post('/api/authentification', { email: email, password: password })
-          .success(function (response){
-            utilisateur = response;
+          .then(function (response){
+            utilisateur = response.data;
             estConnecte = true;
-          })
-          .error(function(error){
-            alert('pas de données !');
-          });
 
-        $rootScope.$broadcast("connectionStatusChanged", {getUtilisateur: utilisateur, getEstConnecte: estConnecte, afficheDeconnection : true});
+            alert('authen ' + estConnecte);
+
+            $rootScope.$broadcast("connectionStatusChanged", {getUtilisateur: utilisateur, getEstConnecte: estConnecte});
+          })
+          .catch(function (error) {
+            utilisateur = null;
+            estConnecte = false;
+            $rootScope.$broadcast("connectionStatusChanged", {getUtilisateur: utilisateur, getEstConnecte: estConnecte});
+          });
       },
       deconnexion : function () {
         utilisateur = null;
         estConnecte = false;
-        $rootScope.$broadcast("connectionStatusChanged", {getUtilisateur: utilisateur, getEstConnecte: estConnecte, afficheDeconnection: false});
+        $rootScope.$broadcast("connectionStatusChanged", {getUtilisateur: utilisateur, getEstConnecte: estConnecte});
       }
     };
   });
