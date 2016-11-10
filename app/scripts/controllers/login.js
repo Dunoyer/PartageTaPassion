@@ -1,3 +1,4 @@
+'use strict';
 /* login.js
  * Controlleur gérant la connexion des utilisateurs
  */

@@ -1,3 +1,4 @@
+'use strict';
 /* authentificationService.js
  * Service gérant l'authentification
  */
@@ -10,13 +11,16 @@ angular.module('partageTaPassionApp')
       getUtilisateur : function(){
         return utilisateur;
       },
+      getUtilisateurAPI : function(email,password){
+        return $http.post('/api/authentification', { email: email, password: password });
+      },
       getEstConnecte : function(){
         return estConnecte;
       },
       connection : function(email, password){
 
         // API REST - Authentification
-        $http.post('/api/authentification', { email: email, password: password })
+        return $http.post('/api/authentification', { email: email, password: password })
           .then(function (response){
             utilisateur = response.data;
             estConnecte = true;
