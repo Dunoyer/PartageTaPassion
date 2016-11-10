@@ -21,8 +21,6 @@ angular.module('partageTaPassionApp')
             utilisateur = response.data;
             estConnecte = true;
 
-            alert('authen ' + estConnecte);
-
             $rootScope.$broadcast("connectionStatusChanged", {getUtilisateur: utilisateur, getEstConnecte: estConnecte});
           })
           .catch(function (error) {

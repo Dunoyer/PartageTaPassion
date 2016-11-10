@@ -1,10 +1,49 @@
 <section>
-  <h1> Bienvenu {{prenom}} sur notre plateforme </h1>
+  <h1> Bienvenu <span ng-bind="prenom"></span> sur notre plateforme </h1>
   <p> Partage une passion dès maintenant. Let's go ! </p>
 
+  <div class="container">
+
+      <div class="col-sm-7 col-md-6">
+        <div class="thumbnail">
+          <img src="../images/groupe.jpg" alt="Partager une passion">
+          <div class="caption">
+            <p class="aligner">Partage une de tes passions</p>
+          </div>
+        </div>
+      </div>
+
+    <div class="col-sm-2 col-md-4">
+      <div class="thumbnail">
+        <img src="../images/Do-what-you-love.jpg" alt="Discutter avec la communauté">
+        <div class="caption">
+          <p>Discutter avec la communauté</p>
+        </div>
+      </div>
+    </div>
+
+      <div class="col-sm-7 col-md-5">
+        <div class="thumbnail">
+          <img src="../images/cherche-passion.jpg" alt="Chercher passion">
+          <div class="caption">
+            <p>Consulter les passions</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-7 col-md-5">
+        <div class="thumbnail">
+          <img src="../images/groupe.jpg" alt="...">
+          <div class="caption">
+            <p>Partage une de tes passions à la communauté</p>
+          </div>
+        </div>
+      </div>
 
 
-  <div class="row">
+  </div>
+
+  <!-- <div class="row">
     <div class="col-sm-4">
         <ul ng-repeat="contenu in contenuPrincipal">
           <li>{{conteu.tite}}</li>
@@ -18,6 +57,6 @@
         Contenu: <input type="text" ng-model="contenu" /><br />
         <button type="submit" class="btn">Envoyer</button>
       </form>
-    </div>
+    </div> -->
   </div>
 </section>

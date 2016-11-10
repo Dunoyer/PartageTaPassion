@@ -25,7 +25,6 @@ angular.module('partageTaPassionApp')
     $scope.$on("connectionStatusChanged", function(even, data){
 
       if(data.getEstConnecte){
-        alert('login.js ' + data.getEstConnecte);
         $location.path("/accueil/membre");
 
       }else{
@@ -33,6 +32,4 @@ angular.module('partageTaPassionApp')
         $location.path("/");
       }
     });
-
-
   });

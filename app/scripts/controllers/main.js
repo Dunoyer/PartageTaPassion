@@ -2,32 +2,18 @@
 
 /**
  * @ngdoc function
- * @name partageTaPassionAppp.controller:MainCtrl
+ * @name partageTaPassionAppp.controller:mainController
  * @description
- * # MainCtrl
+ * # mainController
  * Controller of the partageTaPassionAppp
  */
 angular.module('partageTaPassionApp')
-  .controller('headerController', function ($scope, $http) {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  })
-  .controller('mainController', function ($scope, authentificationService, $location, contenuService) {
+  .controller('mainController', function ($scope, authentificationService, $location) {
 
     // Information sur l'utilisateur
     $scope.prenom = authentificationService.getUtilisateur().prenom;
 
-    $scope.contenuPrincipal = function () {
+   /* $scope.contenuPrincipal = function () {
       return contenuService.getAllContenuAPI();
-    };
-
-    // Déconnexion
-    $scope.logdown = function () {
-      authentificationService.deconnexion();
-      $location.path("/");
-    };
-
+    };*/
   });

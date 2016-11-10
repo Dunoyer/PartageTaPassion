@@ -14,12 +14,12 @@ angular.module('partageTaPassionApp', ['ngRoute'])
 
   $routeProvider
     .when('/', {
-      controller: 'loginController',
-      templateUrl: 'views/login.html'
+      templateUrl: 'views/login.html',
+      controller: 'loginController'
     })
     .when('/accueil/membre', {
-      controller: 'mainController',
-      templateUrl: 'views/accueil.html'
+      templateUrl: 'views/accueil.html',
+      controller: 'mainController'
     })
 
     .otherwise({ redirectTo: '/' });
